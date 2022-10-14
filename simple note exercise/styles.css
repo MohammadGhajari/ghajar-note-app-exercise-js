@@ -1,0 +1,143 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+html{
+    width: 100%;
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    font-family: "Muli";
+    background-color: #dce1de;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("back.webp");
+    background-size: cover;
+    backdrop-filter: contrast(80%) blur(3px);
+    backdrop-filter: ;
+}
+h1 {
+    margin-top: 2rem;
+    font-size: 4rem;
+    color: cornflowerblue;
+}
+input {
+    font-size: 1rem;
+    margin-top: 1rem;
+    width: 30%;
+    height: 2.5rem ;
+    border: 1px cornflowerblue solid;
+    border-radius: 5px;
+    padding-left: 1rem;
+    transition: all 0.3s;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+input:focus {
+    outline: none;
+    border-color: skyblue;
+    transform: scale(1.03);
+    transition: all 0.3s;
+}
+.color_div {
+    width: 32%;
+    display: flex;
+    justify-content: flex-start;
+}
+.color {
+    cursor: pointer;
+    padding: 5px;
+    margin: 0.3rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    transition: all 0.2s;
+
+}
+.color:hover {
+    transform: scale(1.1);
+    transition: all 0.2s;
+}
+.buttons {
+    display: flex;
+    width: 31%;
+    justify-content: flex-end;
+}
+.buttons div:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+.buttons div {
+    border-radius: 5px;
+    margin: 0.2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    filter: drop-shadow(1px 1px 2px black);
+}
+.add {
+    padding: 3px;
+    background-color: #23e523;
+}
+.add:hover {
+    background-color: #4ffa4f;
+}
+.clear {
+    padding: 3px;
+    background-color: #ff394e;
+}
+.clear:hover {
+    background-color: #fc6478;
+}
+.content {
+    width: 80%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    transition: add 2s;
+}
+.example {
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px grey solid;
+    width: 17rem;
+    height: 4rem;
+    border-radius: 5px;
+    margin: 1rem 1rem 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    filter: drop-shadow(2px 2px 2px black);
+}
+.important {
+    animation: beat .25s infinite alternate;
+}
+.example:hover {
+    transform: scale(1.05);
+    transition: all 0.3s;
+}
+.hidden {
+    animation: hide 0.4s;
+    animation-fill-mode: forwards;
+}
+@keyframes hide {
+    100% {
+        transform: scale(0);
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+@keyframes beat{
+    to {
+        transform: scale(1.03);
+        filter: drop-shadow(0px 0px 5px red);
+    }
+}

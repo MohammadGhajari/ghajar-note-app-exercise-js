@@ -20,42 +20,31 @@ clear.addEventListener("click", function () {
 })
 add.addEventListener("click", function () {
     if(input.value.length > 0) {
-        let newToDo = document.createElement("div");
-        newToDo.classList.add("example");
-        newToDo.innerHTML = input.value;
-        if(input.style.backgroundColor === "rgba(0, 0, 0, 0.01)")
-            newToDo.style.backgroundColor = "white";
-        else
-            newToDo.style.backgroundColor = input.style.backgroundColor
-        content.append(newToDo)
-        input.value = "";
-        input.style.backgroundColor = "rgba(0, 0, 0, 0.01)";
-        if(newToDo.style.backgroundColor === "red")
-            newToDo.className += " important";
-        newToDo.addEventListener("click", function () {
-            newToDo.className += " hidden"
-            setTimeout(function () {newToDo.remove()}, 400)
-        })
+        newNote();
     }
 })
 input.addEventListener("keydown", function (ev) {
     if(ev.key === "Enter")
         if(input.value.length > 0) {
-            let newToDo = document.createElement("div");
-            newToDo.classList.add("example");
-            newToDo.innerHTML = input.value;
-            if(input.style.backgroundColor === "rgba(0, 0, 0, 0.01)")
-                newToDo.style.backgroundColor = "white";
-            else
-                newToDo.style.backgroundColor = input.style.backgroundColor
-            content.append(newToDo)
-            input.value = ""
-            input.style.backgroundColor = "rgba(0, 0, 0, 0.01)";
-            newToDo.addEventListener("click", function () {
-                newToDo.className += " hidden"
-                setTimeout(function () {newToDo.remove()}, 400)
-            })
+            newNote();
         }
 })
 
-
+function newNote() {
+    let newToDo = document.createElement("div");
+    newToDo.classList.add("example");
+    newToDo.innerHTML = input.value;
+    if(input.style.backgroundColor === "rgba(0, 0, 0, 0.01)")
+        newToDo.style.backgroundColor = "white";
+    else
+        newToDo.style.backgroundColor = input.style.backgroundColor
+    content.append(newToDo)
+    input.value = "";
+    input.style.backgroundColor = "rgba(0, 0, 0, 0.01)";
+    if(newToDo.style.backgroundColor === "red")
+        newToDo.className += " important";
+    newToDo.addEventListener("click", function () {
+        newToDo.className += " hidden"
+        setTimeout(function () {newToDo.remove()}, 400)
+    })
+}
